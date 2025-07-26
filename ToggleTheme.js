@@ -4,21 +4,23 @@ import styled from 'styled-components/native';
 import { View, ScrollView, Image } from 'react-native';
 
 // Define light and dark themes
-const lightTheme = {
+export const lightTheme = {
     colors: {
         background: '#ffffff',
         buttonBackground: '#000000',
         buttonText: '#ffffff',
         text: '#000000',
+        petTitleBackground: '#B39DDB',
     },
 };
 
-const darkTheme = {
+export const darkTheme = {
     colors: {
         background: '#282828',
         buttonBackground: '#FF6347',
         buttonText: '#282828',
         text: '#FFD700',
+        petTitleBackground: '#ADD8E6',
     },
 };
 
@@ -130,11 +132,14 @@ const Container = styled.View`
 `;
 
 const StyledText = styled.Text`
+  background-color: ${(props) => props.theme.colors.petTitleBackground};
   color: ${(props) => props.theme.colors.text};
   font-size: 24px;
   margin-bottom: 20px;
   font-style:italic;
   font-weight: bold;
+  padding: 12px;
+  border-radius: 10px;
 `;
 const ContentSection = styled.View`
   margin-bottom: 20px;
@@ -162,4 +167,6 @@ const ButtonText = styled.Text`
   font-size: 23px;
   font-weight: bold;
 `;
+
+
 export default ToggleTheme;
